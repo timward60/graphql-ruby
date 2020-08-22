@@ -19,7 +19,7 @@
           </a>
           <a href="/getting_started">Get Started</a>
           <a href="/guides">Guides</a>
-          <a href="/api-doc/1.10.2/">API</a>
+          <a href="/api-doc/1.11.3/">API</a>
           <a href="https://tinyletter.com/graphql-ruby">Newsletter</a>
           <a href="https://github.com/rmosolgo/graphql-ruby">Source Code</a>
           <a href="https://graphql.pro">Upgrade to Pro</a>
@@ -199,6 +199,16 @@
           
         
           
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
             <li>
               <p>
                 <a href="/schema/root_types.html">Root Types</a>
@@ -207,16 +217,6 @@
                 </span>
               </p>
             </li>
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
           
         
           
@@ -249,8 +249,6 @@
           
         
           
-        
-          
             <li>
               <p>
                 <a href="/schema/introspection.html">Introspection</a>
@@ -268,6 +266,20 @@
           
         
           
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
             <li>
               <p>
                 <a href="/schema/lazy_execution.html">Lazy Execution</a>
@@ -276,20 +288,6 @@
                 </span>
               </p>
             </li>
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
           
         
           
@@ -322,10 +320,6 @@
           
         
           
-        
-          
-        
-          
             <li>
               <p>
                 <a href="/schema/class_based_api.html">Class-based API Migration</a>
@@ -340,6 +334,21 @@
         
           
         
+          
+        
+          
+        
+          
+        
+          
+            <li>
+              <p>
+                <a href="/schema/sdl.html">Parsing GraphQL Schema Definition Language into a Ruby Schema</a>
+                <span class="guide-desc">
+                  Defining a schema from a string or .graphql file
+                </span>
+              </p>
+            </li>
           
         
           
@@ -380,24 +389,6 @@
       <ul>
         
           
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
             <li>
               <p>
                 <a href="/queries/executing_queries.html">Executing Queries</a>
@@ -423,14 +414,42 @@
           
         
           
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
             <li>
               <p>
-                <a href="/queries/analysis.html">Ahead-of-Time Analysis</a>
+                <a href="/queries/ast_analysis.html">Ahead-of-Time AST Analysis</a>
                 <span class="guide-desc">
                   Check incoming query strings and reject them if they don't pass your checks
                 </span>
               </p>
             </li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
           
         
           
@@ -511,30 +530,6 @@
           
         
           
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
             <li>
               <p>
                 <a href="/queries/complexity_and_depth.html">Complexity & Depth</a>
@@ -543,6 +538,18 @@
                 </span>
               </p>
             </li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
           
         
           
@@ -587,24 +594,17 @@
           
         
           
+        
+          
+        
+          
+        
+          
             <li>
               <p>
                 <a href="/queries/multiplex.html">Multiplex</a>
                 <span class="guide-desc">
                   Run multiple queries concurrently
-                </span>
-              </p>
-            </li>
-          
-        
-          
-        
-          
-            <li>
-              <p>
-                <a href="/queries/tracing.html">Tracing</a>
-                <span class="guide-desc">
-                  Observation hooks for execution
                 </span>
               </p>
             </li>
@@ -635,9 +635,9 @@
           
             <li>
               <p>
-                <a href="/queries/backtrace_annotations.html">Backtrace Annotations</a>
+                <a href="/queries/tracing.html">Tracing</a>
                 <span class="guide-desc">
-                  Use the GraphQL backtrace for debugging
+                  Observation hooks for execution
                 </span>
               </p>
             </li>
@@ -646,9 +646,9 @@
           
             <li>
               <p>
-                <a href="/queries/ast_analysis.html">Ahead-of-Time AST Analysis</a>
+                <a href="/queries/backtrace_annotations.html">Backtrace Annotations</a>
                 <span class="guide-desc">
-                  Check incoming query strings and reject them if they don't pass your checks
+                  Use the GraphQL backtrace for debugging
                 </span>
               </p>
             </li>
@@ -683,6 +683,14 @@
           
         
           
+        
+          
+        
+          
+        
+          
+        
+          
             <li>
               <p>
                 <a href="/type_definitions/objects.html">Objects</a>
@@ -691,24 +699,6 @@
                 </span>
               </p>
             </li>
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
           
         
           
@@ -775,12 +765,6 @@
           
         
           
-        
-          
-        
-          
-        
-          
             <li>
               <p>
                 <a href="/type_definitions/enums.html">Enums</a>
@@ -789,6 +773,20 @@
                 </span>
               </p>
             </li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
           
         
           
@@ -831,6 +829,12 @@
           
         
           
+        
+          
+        
+          
+        
+          
             <li>
               <p>
                 <a href="/type_definitions/interfaces.html">Interfaces</a>
@@ -839,6 +843,10 @@
                 </span>
               </p>
             </li>
+          
+        
+          
+        
           
         
           
@@ -873,10 +881,6 @@
           
         
           
-        
-          
-        
-          
             <li>
               <p>
                 <a href="/type_definitions/lists.html">Lists</a>
@@ -885,8 +889,6 @@
                 </span>
               </p>
             </li>
-          
-        
           
         
           
@@ -920,19 +922,6 @@
           
         
           
-            <li>
-              <p>
-                <a href="/type_definitions/field_extensions.html">Field Extensions</a>
-                <span class="guide-desc">
-                  Programmatically modify field configuration and resolution
-                </span>
-              </p>
-            </li>
-          
-        
-          
-        
-          
         
           
             <li>
@@ -940,6 +929,17 @@
                 <a href="/type_definitions/directives.html">Directives</a>
                 <span class="guide-desc">
                   Special instructions for the GraphQL runtime
+                </span>
+              </p>
+            </li>
+          
+        
+          
+            <li>
+              <p>
+                <a href="/type_definitions/field_extensions.html">Field Extensions</a>
+                <span class="guide-desc">
+                  Programmatically modify field configuration and resolution
                 </span>
               </p>
             </li>
@@ -971,6 +971,18 @@
     <div class="guide-section">
       <h2 id="authorization-guides">Authorization</h2>
       <ul>
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
         
           
         
@@ -1028,12 +1040,6 @@
           
         
           
-        
-          
-        
-          
-        
-          
             <li>
               <p>
                 <a href="/authorization/visibility.html">Visibility</a>
@@ -1045,28 +1051,6 @@
           
         
           
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
             <li>
               <p>
                 <a href="/authorization/accessibility.html">Accessibility</a>
@@ -1075,12 +1059,6 @@
                 </span>
               </p>
             </li>
-          
-        
-          
-        
-          
-        
           
         
           
@@ -1127,6 +1105,20 @@
           
         
           
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
             <li>
               <p>
                 <a href="/authorization/can_can_integration.html">CanCan Integration</a>
@@ -1135,6 +1127,18 @@
                 </span>
               </p>
             </li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
           
         
           
@@ -1149,8 +1153,6 @@
           
         
           
-        
-          
             <li>
               <p>
                 <a href="/authorization/scoping.html">Scoping</a>
@@ -1159,8 +1161,6 @@
                 </span>
               </p>
             </li>
-          
-        
           
         
           
@@ -1233,14 +1233,6 @@
           
         
           
-        
-          
-        
-          
-        
-          
-        
-          
             <li>
               <p>
                 <a href="/fields/introduction.html">Introduction</a>
@@ -1249,6 +1241,14 @@
                 </span>
               </p>
             </li>
+          
+        
+          
+        
+          
+        
+          
+        
           
         
           
@@ -1403,6 +1403,8 @@
           
         
           
+        
+          
             <li>
               <p>
                 <a href="/fields/resolvers.html">Resolvers</a>
@@ -1411,8 +1413,6 @@
                 </span>
               </p>
             </li>
-          
-        
           
         
           
@@ -1464,26 +1464,6 @@
           
         
           
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
             <li>
               <p>
                 <a href="/mutations/mutation_root.html">Mutation Root</a>
@@ -1497,6 +1477,40 @@
           
         
           
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
             <li>
               <p>
                 <a href="/mutations/mutation_classes.html">Mutation Classes</a>
@@ -1505,28 +1519,6 @@
                 </span>
               </p>
             </li>
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
           
         
           
@@ -1587,6 +1579,12 @@
           
         
           
+        
+          
+        
+          
+        
+          
             <li>
               <p>
                 <a href="/mutations/mutation_authorization.html">Mutation authorization</a>
@@ -1595,6 +1593,8 @@
                 </span>
               </p>
             </li>
+          
+        
           
         
           
@@ -1728,6 +1728,12 @@
           
         
           
+        
+          
+        
+          
+        
+          
             <li>
               <p>
                 <a href="/errors/execution_errors.html">Top-level "errors"</a>
@@ -1789,12 +1795,6 @@
           
         
           
-        
-          
-        
-          
-        
-          
             <li>
               <p>
                 <a href="/errors/error_handling.html">Error Handling</a>
@@ -1803,6 +1803,16 @@
                 </span>
               </p>
             </li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
           
         
           
@@ -1898,22 +1908,30 @@
         
           
         
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
       </ul>
     </div>
   
     <div class="guide-section">
       <h2 id="pagination-guides">Pagination</h2>
       <ul>
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
         
           
             <li>
@@ -1924,34 +1942,6 @@
                 </span>
               </p>
             </li>
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
           
         
           
@@ -2004,6 +1994,28 @@
           
         
           
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
             <li>
               <p>
                 <a href="/pagination/using_connections.html">Using Connections</a>
@@ -2019,18 +2031,6 @@
           
         
           
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
             <li>
               <p>
                 <a href="/pagination/custom_connections.html">Custom Connections</a>
@@ -2039,6 +2039,22 @@
                 </span>
               </p>
             </li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
           
         
           
@@ -2130,42 +2146,12 @@
         
           
         
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
       </ul>
     </div>
   
     <div class="guide-section">
       <h2 id="relay-guides">Relay</h2>
       <ul>
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
         
           
         
@@ -2211,16 +2197,6 @@
           
         
           
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
             <li>
               <p>
                 <a href="/relay/connections.html">Connections</a>
@@ -2234,6 +2210,40 @@
           
         
           
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
             <li>
               <p>
                 <a href="/relay/mutations.html">Mutations</a>
@@ -2242,16 +2252,6 @@
                 </span>
               </p>
             </li>
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
           
         
           
@@ -2382,6 +2382,20 @@
           
         
           
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
             <li>
               <p>
                 <a href="/subscriptions/overview.html">Overview</a>
@@ -2421,11 +2435,14 @@
           
         
           
-        
-          
-        
-          
-        
+            <li>
+              <p>
+                <a href="/subscriptions/subscription_classes.html">Subscription Classes</a>
+                <span class="guide-desc">
+                  Subscription resolvers for pushing updates to clients
+                </span>
+              </p>
+            </li>
           
         
           
@@ -2440,14 +2457,15 @@
           
         
           
-            <li>
-              <p>
-                <a href="/subscriptions/subscription_classes.html">Subscription Classes</a>
-                <span class="guide-desc">
-                  Subscription resolvers for pushing updates to clients
-                </span>
-              </p>
-            </li>
+        
+          
+        
+          
+        
+          
+        
+          
+        
           
         
           
@@ -2478,23 +2496,14 @@
           
         
           
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
+            <li>
+              <p>
+                <a href="/subscriptions/broadcast.html">Broadcasts</a>
+                <span class="guide-desc">
+                  Delivering the same GraphQL result to multiple subscribers
+                </span>
+              </p>
+            </li>
           
         
           
@@ -2512,24 +2521,6 @@
                 </span>
               </p>
             </li>
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
           
         
           
@@ -2572,6 +2563,28 @@
           
         
           
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
             <li>
               <p>
                 <a href="/subscriptions/pusher_implementation.html">Pusher Implementation</a>
@@ -2580,12 +2593,6 @@
                 </span>
               </p>
             </li>
-          
-        
-          
-        
-          
-        
           
         
           
@@ -2631,16 +2638,14 @@
         
           
         
+          
+        
       </ul>
     </div>
   
     <div class="guide-section">
       <h2 id="graphql-pro-guides">GraphQL Pro</h2>
       <ul>
-        
-          
-        
-          
         
           
         
@@ -2653,6 +2658,8 @@
                 </span>
               </p>
             </li>
+          
+        
           
         
           
@@ -2737,14 +2744,13 @@
           
         
           
-            <li>
-              <p>
-                <a href="/pro/authorization.html">Authorization Framework</a>
-                <span class="guide-desc">
-                  GraphQL::Pro's comprehensive access control system, including CanCan and Pundit integrations
-                </span>
-              </p>
-            </li>
+        
+          
+        
+          
+        
+          
+        
           
         
           
@@ -2784,14 +2790,6 @@
                 </span>
               </p>
             </li>
-          
-        
-          
-        
-          
-        
-          
-        
           
         
           
@@ -2878,22 +2876,14 @@
         
           
         
+          
+        
       </ul>
     </div>
   
     <div class="guide-section">
       <h2 id="graphql-pro-operationstore-guides">GraphQL Pro - OperationStore</h2>
       <ul>
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
         
           
         
@@ -2918,6 +2908,18 @@
                 </span>
               </p>
             </li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
           
         
           
@@ -2964,30 +2966,6 @@
           
         
           
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
             <li>
               <p>
                 <a href="/operation_store/active_record_backend.html">ActiveRecord Backend</a>
@@ -2999,6 +2977,44 @@
           
         
           
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
             <li>
               <p>
                 <a href="/operation_store/redis_backend.html">Redis Backend</a>
@@ -3007,26 +3023,6 @@
                 </span>
               </p>
             </li>
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
           
         
           
@@ -3067,6 +3063,8 @@
           
         
           
+        
+          
             <li>
               <p>
                 <a href="/operation_store/server_management.html">Server Management</a>
@@ -3075,6 +3073,8 @@
                 </span>
               </p>
             </li>
+          
+        
           
         
           
@@ -3166,10 +3166,6 @@
           
         
           
-        
-          
-        
-          
             <li>
               <p>
                 <a href="/defer/overview.html">Overview</a>
@@ -3201,6 +3197,10 @@
           
         
           
+        
+          
+        
+          
             <li>
               <p>
                 <a href="/defer/setup.html">Server Setup</a>
@@ -3209,6 +3209,18 @@
                 </span>
               </p>
             </li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
           
         
           
@@ -3342,24 +3354,22 @@
         
           
         
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
       </ul>
     </div>
   
     <div class="guide-section">
       <h2 id="javascript-client-guides">JavaScript Client</h2>
       <ul>
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
         
           
         
@@ -3411,6 +3421,12 @@
           
         
           
+        
+          
+        
+          
+        
+          
             <li>
               <p>
                 <a href="/javascript_client/sync.html">OperationStore Sync</a>
@@ -3428,30 +3444,6 @@
           
         
           
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
             <li>
               <p>
                 <a href="/javascript_client/apollo_subscriptions.html">Apollo Subscriptions</a>
@@ -3460,6 +3452,14 @@
                 </span>
               </p>
             </li>
+          
+        
+          
+        
+          
+        
+          
+        
           
         
           
@@ -3595,6 +3595,30 @@
           
         
           
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
             <li>
               <p>
                 <a href="/language_tools/visitor.html">AST Visitor</a>
@@ -3603,30 +3627,6 @@
                 </span>
               </p>
             </li>
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
           
         
           
@@ -3805,14 +3805,6 @@
           
         
           
-        
-          
-        
-          
-        
-          
-        
-          
             <li>
               <p>
                 <a href="/testing/overview.html">Overview</a>
@@ -3821,6 +3813,8 @@
                 </span>
               </p>
             </li>
+          
+        
           
         
           
@@ -3893,6 +3887,12 @@
                 </span>
               </p>
             </li>
+          
+        
+          
+        
+          
+        
           
         
           

@@ -19,7 +19,7 @@
           </a>
           <a href="/getting_started">Get Started</a>
           <a href="/guides">Guides</a>
-          <a href="/api-doc/1.10.2/">API</a>
+          <a href="/api-doc/1.11.3/">API</a>
           <a href="https://tinyletter.com/graphql-ruby">Newsletter</a>
           <a href="https://github.com/rmosolgo/graphql-ruby">Source Code</a>
           <a href="https://graphql.pro">Upgrade to Pro</a>
@@ -65,7 +65,7 @@
 
 <ul>
   <li>The application defines lots of classes for the GraphQL types</li>
-  <li>Starting from root types (<code class="highlighter-rouge">query</code>, <code class="highlighter-rouge">mutation</code>, and <code class="highlighter-rouge">subscription</code>) and any defined <code class="highlighter-rouge">orphan_types</code>, the schema discovers all types, fields, arguments, enum values, and directives in the schema</li>
+  <li>Starting from root types (<code class="language-plaintext highlighter-rouge">query</code>, <code class="language-plaintext highlighter-rouge">mutation</code>, and <code class="language-plaintext highlighter-rouge">subscription</code>) and any defined <code class="language-plaintext highlighter-rouge">orphan_types</code>, the schema discovers all types, fields, arguments, enum values, and directives in the schema</li>
   <li>Non-type objects (fields, arguments, enum values) are initialized when they’re attached to the classes or instances they belong to.</li>
 </ul>
 
@@ -73,7 +73,7 @@
 
 <p>In your custom classes, you can add class-level instance variables that hold configuration. For example:</p>
 
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Types</span><span class="o">::</span><span class="no">BaseObject</span> <span class="o">&lt;</span> <span class="no">GraphQL</span><span class="o">::</span><span class="no">Schema</span><span class="o">::</span><span class="no">Object</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Types::BaseObject</span> <span class="o">&lt;</span> <span class="no">GraphQL</span><span class="o">::</span><span class="no">Schema</span><span class="o">::</span><span class="no">Object</span>
   <span class="c1"># Call this method in an Object class to get or set the permission level:</span>
   <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">required_permission</span><span class="p">(</span><span class="n">permission_level</span> <span class="o">=</span> <span class="kp">nil</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">permission_level</span><span class="p">.</span><span class="nf">nil?</span>
@@ -96,11 +96,11 @@
 <span class="c1"># =&gt; :admin</span>
 </code></pre></div></div>
 
-<p>Now, any runtime code which calls <code class="highlighter-rouge">type.required_permission</code> will get the configured value.</p>
+<p>Now, any runtime code which calls <code class="language-plaintext highlighter-rouge">type.required_permission</code> will get the configured value.</p>
 
 <h3 id="customizing-fields">Customizing fields</h3>
 
-<p>Fields are generated in a different way. Instead of using classes, they are generated with instances of <code class="highlighter-rouge">GraphQL::Schema::Field</code> (or a subclass). In short, the definition process works like this:</p>
+<p>Fields are generated in a different way. Instead of using classes, they are generated with instances of <code class="language-plaintext highlighter-rouge">GraphQL::Schema::Field</code> (or a subclass). In short, the definition process works like this:</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># This is what happens under the hood, roughly:</span>
 <span class="c1"># In an object class:</span>
@@ -113,14 +113,14 @@
 <p>So, you can customize this process by:</p>
 
 <ul>
-  <li>creating a custom class which extends <code class="highlighter-rouge">GraphQL::Schema::Field</code></li>
-  <li>overriding <code class="highlighter-rouge">#initialize</code> on that class (instance methods)</li>
-  <li>registering that class as the <code class="highlighter-rouge">field_class</code> on Objects and Interfaces which should use the customized field.</li>
+  <li>creating a custom class which extends <code class="language-plaintext highlighter-rouge">GraphQL::Schema::Field</code></li>
+  <li>overriding <code class="language-plaintext highlighter-rouge">#initialize</code> on that class (instance methods)</li>
+  <li>registering that class as the <code class="language-plaintext highlighter-rouge">field_class</code> on Objects and Interfaces which should use the customized field.</li>
 </ul>
 
-<p>For example, you can create a custom class which accepts a new parameter to <code class="highlighter-rouge">initialize</code>:</p>
+<p>For example, you can create a custom class which accepts a new parameter to <code class="language-plaintext highlighter-rouge">initialize</code>:</p>
 
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Types</span><span class="o">::</span><span class="no">AuthorizedField</span> <span class="o">&lt;</span> <span class="no">GraphQL</span><span class="o">::</span><span class="no">Schema</span><span class="o">::</span><span class="no">Field</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Types::AuthorizedField</span> <span class="o">&lt;</span> <span class="no">GraphQL</span><span class="o">::</span><span class="no">Schema</span><span class="o">::</span><span class="no">Field</span>
   <span class="c1"># Override #initialize to take a new argument:</span>
   <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="ss">required_permission: </span><span class="kp">nil</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>
     <span class="vi">@required_permission</span> <span class="o">=</span> <span class="n">required_permission</span>
@@ -132,20 +132,20 @@
 <span class="k">end</span>
 </code></pre></div></div>
 
-<p>Then, pass the field class as <code class="highlighter-rouge">field_class(...)</code> wherever it should be used:</p>
+<p>Then, pass the field class as <code class="language-plaintext highlighter-rouge">field_class(...)</code> wherever it should be used:</p>
 
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Types</span><span class="o">::</span><span class="no">BaseObject</span> <span class="o">&lt;</span> <span class="no">GraphQL</span><span class="o">::</span><span class="no">Schema</span><span class="o">::</span><span class="no">Object</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Types::BaseObject</span> <span class="o">&lt;</span> <span class="no">GraphQL</span><span class="o">::</span><span class="no">Schema</span><span class="o">::</span><span class="no">Object</span>
   <span class="c1"># Use this class for defining fields</span>
   <span class="n">field_class</span> <span class="no">AuthorizedField</span>
 <span class="k">end</span>
 
 <span class="c1"># And/Or</span>
-<span class="k">class</span> <span class="nc">Types</span><span class="o">::</span><span class="no">BaseInterface</span> <span class="o">&lt;</span> <span class="no">GraphQL</span><span class="o">::</span><span class="no">Schema</span><span class="o">::</span><span class="no">Interface</span>
+<span class="k">class</span> <span class="nc">Types::BaseInterface</span> <span class="o">&lt;</span> <span class="no">GraphQL</span><span class="o">::</span><span class="no">Schema</span><span class="o">::</span><span class="no">Interface</span>
   <span class="n">field_class</span> <span class="no">AuthorizedField</span>
 <span class="k">end</span>
 </code></pre></div></div>
 
-<p>Now, <code class="highlighter-rouge">AuthorizedField.new(*args, &amp;block)</code> will be used to create <code class="highlighter-rouge">GraphQL::Schema::Field</code>s on those types. At runtime <code class="highlighter-rouge">field.required_permission</code> will return the configured value.</p>
+<p>Now, <code class="language-plaintext highlighter-rouge">AuthorizedField.new(*args, &amp;block)</code> will be used to create <code class="language-plaintext highlighter-rouge">GraphQL::Schema::Field</code>s on those types. At runtime <code class="language-plaintext highlighter-rouge">field.required_permission</code> will return the configured value.</p>
 
 <h3 id="customizing-connections">Customizing Connections</h3>
 
@@ -153,31 +153,31 @@
 
 <ul>
   <li>Create a new class extending ‘GraphQL::Types::Relay::BaseConnection’</li>
-  <li>Assign it to your object/interface type with <code class="highlighter-rouge">connection_type_class(MyCustomConnection)</code></li>
+  <li>Assign it to your object/interface type with <code class="language-plaintext highlighter-rouge">connection_type_class(MyCustomConnection)</code></li>
 </ul>
 
 <p>For example, you can create a custom connection:</p>
 
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Types</span><span class="o">::</span><span class="no">MyCustomConnection</span> <span class="o">&lt;</span> <span class="no">GraphQL</span><span class="o">::</span><span class="no">Types</span><span class="o">::</span><span class="no">Relay</span><span class="o">::</span><span class="no">BaseConnection</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Types::MyCustomConnection</span> <span class="o">&lt;</span> <span class="no">GraphQL</span><span class="o">::</span><span class="no">Types</span><span class="o">::</span><span class="no">Relay</span><span class="o">::</span><span class="no">BaseConnection</span>
   <span class="n">field</span> <span class="ss">:total_count</span><span class="p">,</span> <span class="no">Integer</span><span class="p">,</span> <span class="ss">null: </span><span class="kp">false</span>
 
   <span class="k">def</span> <span class="nf">total_count</span>
-    <span class="n">object</span><span class="p">.</span><span class="nf">nodes</span><span class="p">.</span><span class="nf">size</span>
+    <span class="n">object</span><span class="p">.</span><span class="nf">items</span><span class="p">.</span><span class="nf">size</span>
   <span class="k">end</span>
 <span class="k">end</span>
 </code></pre></div></div>
 
-<p>Then, pass the field class as <code class="highlighter-rouge">connection_type_class(...)</code> wherever it should be used:</p>
+<p>Then, pass the field class as <code class="language-plaintext highlighter-rouge">connection_type_class(...)</code> wherever it should be used:</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span> <span class="nn">Types</span>
-  <span class="k">class</span> <span class="nc">Types</span><span class="o">::</span><span class="no">BaseObject</span> <span class="o">&lt;</span> <span class="no">GraphQL</span><span class="o">::</span><span class="no">Schema</span><span class="o">::</span><span class="no">Object</span>
+  <span class="k">class</span> <span class="nc">Types::BaseObject</span> <span class="o">&lt;</span> <span class="no">GraphQL</span><span class="o">::</span><span class="no">Schema</span><span class="o">::</span><span class="no">Object</span>
     <span class="c1"># Use this class for defining connections</span>
     <span class="n">connection_type_class</span> <span class="no">MyCustomConnection</span>
   <span class="k">end</span>
 <span class="k">end</span>
 </code></pre></div></div>
 
-<p>Now, all type classes that extend <code class="highlighter-rouge">BaseObject</code> will have a connection_type with the additional field <code class="highlighter-rouge">totalCount</code>.</p>
+<p>Now, all type classes that extend <code class="language-plaintext highlighter-rouge">BaseObject</code> will have a connection_type with the additional field <code class="language-plaintext highlighter-rouge">totalCount</code>.</p>
 
 <h3 id="customizing-edges">Customizing Edges</h3>
 
@@ -185,7 +185,7 @@
 
 <ul>
   <li>Create a new class extending ‘GraphQL::Types::Relay::BaseEdge’</li>
-  <li>Assign it to your object/interface type with <code class="highlighter-rouge">edge_type_class(MyCustomEdge)</code></li>
+  <li>Assign it to your object/interface type with <code class="language-plaintext highlighter-rouge">edge_type_class(MyCustomEdge)</code></li>
 </ul>
 
 <h3 id="customizing-arguments">Customizing Arguments</h3>
@@ -193,22 +193,22 @@
 <p>Arguments may be customized in a similar way to Fields.</p>
 
 <ul>
-  <li>Create a new class extending <code class="highlighter-rouge">GraphQL::Schema::Argument</code></li>
-  <li>Assign it to your field class with <code class="highlighter-rouge">argument_class(MyArgClass)</code></li>
+  <li>Create a new class extending <code class="language-plaintext highlighter-rouge">GraphQL::Schema::Argument</code></li>
+  <li>Assign it to your field class with <code class="language-plaintext highlighter-rouge">argument_class(MyArgClass)</code></li>
 </ul>
 
-<p>Then, in your custom argument class, you can use <code class="highlighter-rouge">#initialize(name, type, desc = nil, **kwargs)</code> to take input from the DSL.</p>
+<p>Then, in your custom argument class, you can use <code class="language-plaintext highlighter-rouge">#initialize(name, type, desc = nil, **kwargs)</code> to take input from the DSL.</p>
 
 <h3 id="customizing-enum-values">Customizing Enum Values</h3>
 
 <p>Enum values may be customized in a similar way to Fields.</p>
 
 <ul>
-  <li>Create a new class extending <code class="highlighter-rouge">GraphQL::Schema::EnumValue</code></li>
-  <li>Assign it to your base <code class="highlighter-rouge">Enum</code> class with <code class="highlighter-rouge">enum_value_class(MyEnumValueClass)</code></li>
+  <li>Create a new class extending <code class="language-plaintext highlighter-rouge">GraphQL::Schema::EnumValue</code></li>
+  <li>Assign it to your base <code class="language-plaintext highlighter-rouge">Enum</code> class with <code class="language-plaintext highlighter-rouge">enum_value_class(MyEnumValueClass)</code></li>
 </ul>
 
-<p>Then, in your custom argument class, you can use <code class="highlighter-rouge">#initialize(name, desc = nil, **kwargs)</code> to take input from the DSL.</p>
+<p>Then, in your custom argument class, you can use <code class="language-plaintext highlighter-rouge">#initialize(name, desc = nil, **kwargs)</code> to take input from the DSL.</p>
 
 </div>
 <p class="guide-footer">
